@@ -1,9 +1,13 @@
 def computadorEscolheJogada(n: int, m: int) -> int:
+    
     if n % (m+1) == 0:
         print("Você começa!")
         return jogadorEscolheJogada(n, m)
 
-
+    else:
+        print("Computador começa!")
+        if True:
+            ...
 def jogadorEscolheJogada(n: int, m: int) -> int:
     pecas_tirar = int(input("Quantas peças vocÊ vai tirar? "))
 
@@ -12,7 +16,7 @@ def jogadorEscolheJogada(n: int, m: int) -> int:
         pecas_tirar = int(input("Quantas peças vocÊ vai tirar? "))
 
     n = n - pecas_tirar
-
+    print(f"Você tirou {pecas_tirar} peças")
     return n
 
 
@@ -23,8 +27,6 @@ def partida():
 
     while n > 0:
         n = computadorEscolheJogada(n, m)
-
-
 
 
 partida()
