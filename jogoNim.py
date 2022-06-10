@@ -1,5 +1,7 @@
 def computadorEscolheJogada(n: int, m: int) -> int:
     
+    pecas_tirar_computador = 0
+
     if n % (m+1) == 0:
         print("Você começa!\n")
         return jogadorEscolheJogada(n, m)
@@ -9,18 +11,26 @@ def computadorEscolheJogada(n: int, m: int) -> int:
         
         possiveisJogadas = []
         
-        for i in range(n+1, n-m, 1):
+        for i in range(n-m, n):
             possiveisJogadas.append(i)
 
         possiveisJogadas.reverse()
 
+        for i in possiveisJogadas:
+            if i % (m+1) == 0:
+                pecas_tirar_computador = i
+                break
         
+        n = pecas_tirar_computador
 
+        possiveisJogadas.clear()
+        
+        return n
 
 
 def jogadorEscolheJogada(n: int, m: int) -> int:
     
-    pecas_tirar = int(input("Quantas peças vocÊ vai tirar? \n"))
+    pecas_tirar = int(input("Quantas peças você vai tirar? \n"))
 
     while pecas_tirar > m:
         print("Oops! Jogada inválida! Tente de novo.\n")

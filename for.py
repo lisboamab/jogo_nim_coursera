@@ -1,11 +1,24 @@
 n = 10
-m = 2
-listalocal = []
-print(listalocal)
-for i in range(0 ,n+1, m):
-    listalocal.append(i)
-    print(listalocal)
+m = 3
 
-listalocal.reverse()
+pecas_tirar_computador = 0
 
-print(listalocal)
+print("Computador começa!\n")
+
+possiveisJogadas = []
+
+for i in range(n-m, n):
+    possiveisJogadas.append(i)
+
+print(possiveisJogadas)
+
+possiveisJogadas.reverse()
+
+for i in possiveisJogadas:
+    if i % (m+1) == 0:
+        pecas_tirar_computador = i
+        break
+
+n = pecas_tirar_computador
+
+print(n)
